@@ -6,12 +6,12 @@
 import { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Gamepad2, Search, X, Maximize2, ExternalLink, Play, Clock, Star, Trophy, ArrowLeft } from 'lucide-react';
-import { GAMES, Game } from './data/games';
+import { GAMES } from './data/games';
 
 export default function App() {
-  const [selectedGame, setSelectedGame] = useState<Game | null>(null);
+  const [selectedGame, setSelectedGame] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
-  const [activeCategory, setActiveCategory] = useState<string>('All');
+  const [activeCategory, setActiveCategory] = useState('All');
 
   const categories = ['All', ...Array.from(new Set(GAMES.map(g => g.category)))];
 

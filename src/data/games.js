@@ -1,13 +1,4 @@
-export interface Game {
-  id: string;
-  title: string;
-  description: string;
-  url: string;
-  category: 'Classic' | 'Puzzle' | 'Action' | 'Arcade';
-  thumbnailColor: string;
-}
-
-export const GAMES: Game[] = [
+export const GAMES = [
   {
     id: 'tetris',
     title: 'Tetris Retro',
