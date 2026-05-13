@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-neon-green: #00FF00;
+  --color-brutal-black: #111111;
+  --color-brutal-white: #FFFFFF;
+}
+
+@layer base {
+  body {
+    @apply bg-black text-white selection:bg-neon-green selection:text-black;
+  }
+}
+
+.brutal-border {
+  border: 2px solid white;
+  box-shadow: 4px 4px 0px white;
+  transition: all 0.2s ease;
+}
+
+.brutal-border:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 8px 8px 0px var(--color-neon-green);
+  border-color: var(--color-neon-green);
+}
+
+.brutal-shadow-green {
+  box-shadow: 4px 4px 0px var(--color-neon-green);
+}
+
+.marquee-container {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.marquee-content {
+  display: inline-block;
+  animation: marquee 20s linear infinite;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #111;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-neon-green);
+}
